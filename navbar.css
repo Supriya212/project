@@ -1,0 +1,85 @@
+body {
+    background-image: url("doctor.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+ height: 120%;
+background-attachment: fixed;
+}
+div.clinic_logo{
+
+float: left;
+padding-top: 0px;
+padding-right: 20px;
+padding-bottom: 0px;
+padding-left: 10px;
+
+}
+
+div.tab {
+margin-left:370px;
+    opacity: 0.9
+filter: alpha(opacity=60);
+margin-top: 0px;
+-------------------
+/*background: -moz-linear-gradient(right, rgba(179, 255, 240, 0), rgba(255,255,255,1)); 
+background: linear-gradient(to right, rgba(128, 204, 255, 0), rgba(128, 204, 255, 1));
+--------------------*/
+
+display: inline-block;
+list-style-type: none;
+font-size: 20px;
+font-family: 'Ubuntu', sans-serif;
+padding: 0;
+overflow: hidden;
+background-color:  #007acc;
+border-radius: 20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0.1, 0.5), 0 6px 20px 0 rgba(0, 0, 0.1, 0.15);
+text-align: center;
+color: white;} 
+/*.info:hover {background-color:    #66b3ff;
+border-radius: 20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0.3, 0.5), 0 6px 20px 0 rgba(0, 0, 0.1, 0.15);
+color: #003366;
+}*/
+
+/* Style the buttons inside the tab */
+div.tab button {
+   /*---- background: -moz-linear-gradient(right, rgba(179, 255, 240, 0), rgba(255,255,255,1)); 
+background: linear-gradient(to right, rgba(128, 204, 255, 0), rgba(128, 204, 255, 1));----*/background: none;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+color: white;
+}
+
+/* ==Change background color of buttons on hover */
+div.tab button:hover {
+   /*-- background-color: #ddd;--*/
+   background-color:    #66b3ff;
+border-radius: 20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0.3, 0.5), 0 6px 20px 0 rgba(0, 0, 0.1, 0.15);
+color: #003366;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+background-color:  #007acc;    
+
+    margin-left:300px
+
+}
+div.tab button.active:hover {
+background-color:  #66b3ff;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}

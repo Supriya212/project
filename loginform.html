@@ -1,0 +1,97 @@
+<html>
+<head>
+<link rel="stylesheet" href="log.css">
+<script>
+function ValidateForm()
+{
+
+var pword = document.forms["myForm"]["pword"].value;
+var cpword = document.forms["myForm"]["cpword"].value;
+if(cpword!=pword)
+{
+alert("confirm password did not match with original password!!");
+return false;
+}
+else
+{
+alert("user account created successfully!!");
+return true;
+}
+
+}
+</script>
+</head>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" >Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+			<form method="POST" action="login.php">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="email" class="input" name="email">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name="pword">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In" >
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="forgetpass.html">Forgot Password?</a>
+				</div>
+			</div>
+			 </form>
+			<div class="sign-up-htm">
+                         <form id="myForm" method="POST" action="signup.php" onsubmit="return ValidateForm()">
+				<div class="group">
+					<label for="user" class="label">Firstname</label>
+					<input id="user" type="text" class="input" name="firstname" pattern="[a-zA-Z]+" required>
+				</div>
+                                <div class="group">
+					<label for="user" class="label">Lastname</label>
+					<input id="user" type="text" class="input" name="lastname" pattern="[a-zA-Z]+" required>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name="pword"  pattern="\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$"required>
+
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Confirm Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Are you a:</label>
+					<input id="pass" type="radio" class="input" name="actor" value="Doctor" checked>Doctor<br>
+                                        <input id="pass" type="radio" class="input" name="actor" value="Patient" checked>Patient<br>
+				</div>
+                                <div class="group">
+					<label for="pass" class="label">Contact No:</label>
+					<input id="pass" type="text" class="input" name="contact" pattern="[0-9]+" required>
+				</div>
+                                <div class="group">
+					<label for="pass" class="label">Email-Id:</label>
+					<input id="pass" type="email" class="input" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+				</div>
+                                
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up" onclick="signup.php">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">Already Member?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+</html>

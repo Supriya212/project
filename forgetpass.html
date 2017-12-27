@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Password Reset</title>
+<link rel="stylesheet" href="newlogincss.css">
+<link rel="stylesheet" href="navbar.css">
+<script>
+function ValidateForm()
+{
+
+var pword = document.forms["myForm"]["pword"].value;
+var cpword = document.forms["myForm"]["cpword"].value;
+if(cpword!=pword)
+{
+alert("confirm password did not match with original password!!");
+return false;
+}
+else{
+alert("New Password Set Successfully!!");
+return true;
+}
+}
+</script>
+<style>
+a:link, a:visited {
+    background-color: #004d80;
+    color: white;
+    padding: 14px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius:25px;
+}
+
+
+a:hover, a:active {
+    background-color: #66b3ff;
+}
+
+</style>
+</head>
+<body>
+<br>
+<br><br><br>
+<form id="myForm" method="POST" action="passwordset.php" onsubmit="return ValidateForm()">
+<h5>Email-id:<br>
+<input type="email" name="email" required></h5> 
+<h5>New Password:<br>
+<input type="password" name="pword"  pattern="\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$"required></h5>
+<div id ="e3">NOTE:The password must be minimum of 8 characters,must contain atleast one number,
+	uppercase character,lowercase character and special character</div>
+<h5>Confirm New Password:<br>
+<input type="password" name="cpword" required></h5>
+<br><br>
+<input type="submit" value="Submit">      <a href ="loginform.html" style="margin-left:450px">Back</a>             
+</form>
+</body>
+</html>

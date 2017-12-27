@@ -1,0 +1,179 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="test.css">
+<title> sign up page </title>
+<link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'>
+
+<style>
+body{
+font-family: 'Kaushan Script';font-size: 22px;
+}
+#e6{
+
+	background-repeat:no-repeat;
+	background-position:right top;
+	margin-left: 250px;
+	margin-right: 250px;
+	text-align: left;
+	padding-left:100px;
+	}
+#e1{
+
+	background-color:#f1f1f1;
+	text-align: left;
+	padding-left:100px;
+}
+#e2
+{
+font-size: 200%;
+color:#00cca3;
+text-align: middle;
+}
+#e3
+{
+color: red;
+}
+#e4
+{
+text-align: right;
+padding-right:100px;
+}
+#e5
+{
+font-family: 'Kaushan Script';
+font-size: 200%;
+color:white;
+}
+h3{
+color: black;
+}
+h6
+{
+color: red;
+}
+
+h3,h6{display:inline;}
+input[type=submit] {
+    width: 50%;
+    background-color: #00cca3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="email"]
+{
+width: 40%;
+    padding: 12px 12px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: 2px solid grey;
+    border-radius: 2px;
+}
+input[type="password"]
+{
+width: 40%;
+    padding: 12px 12px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: 2px solid grey;
+    border-radius: 2px;
+}
+input[type="text"]
+{
+width: 40%;
+    padding: 12px 12px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: 2px solid grey;
+    border-radius: 2px;
+}
+.error{color:#ff0000}
+</style>
+<script>
+function ValidateForm()
+{
+
+var pword = document.forms["myForm"]["pword"].value;
+var cpword = document.forms["myForm"]["cpword"].value;
+if(cpword!=pword)
+{
+alert("confirm password did not match with original password!!");
+return false;
+}
+else
+{
+alert("user account created successfully!!");
+return true;
+}
+
+}
+</script>
+
+</head>
+<body>
+<div style="background:#00cca3;border:1px solid black;padding:10px;id='e5'">
+<h1>Online Clinic</h1>
+</div>
+<div style="background:#5f5f5f;border:2px solid black;padding:10px;">
+<button class="btn info" onclick="location.href='signin.html'" style="font-family: 'Kaushan Script';font-size: 22px">Home</button>
+<button class="btn info" style="font-family: 'Kaushan Script';font-size: 22px">News</button>
+<button class="btn info" style="font-family: 'Kaushan Script';font-size: 22px">Contact</button>
+<button class="btn info" style="font-family: 'Kaushan Script';font-size: 22px">About</button></div>
+
+<div id="e6">
+<div id="e2">
+<h2 >Sign Up</h2></div>
+<div id="e1">
+	
+	
+	<form id="myForm" method="POST" action="signup.php" onsubmit="return ValidateForm()">
+	<br><br><br>
+	 <h6><sup>*</sup></h6><h3>FirstName:</h3><br>
+         <input type="text" name="firstname" pattern="[a-zA-Z]+" required> 
+	
+	 <br>
+	 <h6><sup>*</sup></h6><h3>LastName:</h3><br>
+         <input type="text" name="lastname" pattern="[a-zA-Z]+" required >
+	
+	
+	 <br>
+	 <h6><sup>*</sup></h6><h3>Password:</h3><br>
+         <input type="password" name="pword"  pattern="\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$"required>
+	<div id="e3">NOTE:The password must be minimum of 8 characters,must contain atleast one number,
+	uppercase character,lowercase character and special character</div>
+	
+	 <br>
+	 <h6><sup>*</sup></h6><h3>Confirm Password:</h3><br>
+         <input type="password" name="cpword" required>
+	 <br>
+
+	  <br>
+	 <h6><sup>*</sup></h6><h3>Are you a:</h3><br>
+	<input type="radio" name="actor" value="Doctor" checked>Doctor<br>
+  	 <input type="radio" name="actor" value="Patient" >Patient<br>
+	 <br>
+
+        <br>
+	 <h6><sup>*</sup></h6><h3>Contact No:</h3><br>
+         <input type="text" name="contact" pattern="[0-9]+" required>
+	 <br><br>
+
+	 <h6><sup>*</sup></h6><h3>Email-Id:</h3><br>
+         <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+	 <br>
+	
+
+	 <div id="e3">NOTE:fields marked with * are mandatory</div><br>
+	 <input type="submit" value="Submit">
+	<br>
+
+	</form>
+	
+</div>
+
+</body>
+</html>
